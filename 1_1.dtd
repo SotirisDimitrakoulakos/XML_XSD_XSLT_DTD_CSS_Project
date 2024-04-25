@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!ELEMENT customerList (company | person)*>
+<!ELEMENT company (company_info, package_offer+)>
+<!ELEMENT person (person_info, package_offer+)>
+<!ELEMENT person_info (first_name, middle_name?, last_name, person_AFM, person_DOY, person_address)>
+<!ELEMENT company_info (name, company_AFM, company_DOY, company_address)>
+<!ELEMENT package_offer (giving+, tel_numb*, startPrice, (finalPrice | in_discount), contract_start_date, contract_end_date)>
+<!ELEMENT in_discount ((discount_rate, amount_after_disccount) | (amount_after_disccount, discount_rate))>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT middle_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+<!ELEMENT person_AFM (#PCDATA)>
+<!ELEMENT person_DOY (#PCDATA)>
+<!ELEMENT person_address (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT company_AFM (#PCDATA)>
+<!ELEMENT company_DOY (#PCDATA)>
+<!ELEMENT company_address (#PCDATA)>
+<!ELEMENT giving (#PCDATA)>
+<!ELEMENT tel_numb (#PCDATA)>
+<!ELEMENT startPrice (#PCDATA)>
+<!ELEMENT finalPrice (#PCDATA)>
+<!ELEMENT contract_start_date (#PCDATA)>
+<!ELEMENT contract_end_date (#PCDATA)>
+<!ELEMENT discount_rate (#PCDATA)>
+<!ELEMENT amount_after_disccount (#PCDATA)>
+<!ATTLIST company CompCodeNo ID #REQUIRED>
+<!ATTLIST person PersonCodeNo ID #REQUIRED>
+<!ATTLIST package_offer package_category (B_START|B_LITE|P_LITE|P_START|B_all|P_all|B_smart|P_smart) #REQUIRED contract_No ID #REQUIRED>
+<!ATTLIST startPrice unitS CDATA #FIXED "euro" forperiodS CDATA #FIXED "month">
+<!ATTLIST finalPrice unitF CDATA #FIXED "euro" forperiodF CDATA #FIXED "month">
+<!ATTLIST amount_after_discount unit CDATA #FIXED "euro" forperiod CDATA #FIXED "month">

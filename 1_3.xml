@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE customerList SYSTEM "1_1.dtd">
+<customerList>
+  <company CompCodeNo="CA1">
+    <package_offer package_category="P_START" contract_No="C1">
+      <giving>Insurance</giving>
+      <tel_numb>210-1234567</tel_numb>
+      <startPrice unitS="euro">10</startPrice>
+      <finalPrice forperiodF="month">100</finalPrice>
+      <contract_start_date>29-05-2023</contract_start_date>
+      <contract_end_date>29-06-2023</contract_end_date>
+    </package_offer>
+    <package_offer package_category="P_all" contract_No="C2">
+      <giving>Bonus Tools</giving>
+      <tel_numb>210-7654321</tel_numb>
+      <startPrice unitS="euro" forperiodS="month">20</startPrice>
+      <finalPrice unitF="euro" forperiodF="month">200</finalPrice>
+      <contract_start_date>30-05-2023</contract_start_date>
+      <contract_end_date>30-06-2023</contract_end_date>
+    </package_offer>
+  </company>
+  <person PersonCodeNo="PA1">
+    <person_info>
+      <first_name>Joe</first_name>
+      <last_name>Shmo</last_name>
+      <person_AFM>3333333333</person_AFM>
+      <person_DOY>4444444444</person_DOY>
+      <person_address>Street2, 456, Korydallos</person_address>
+    </person_info>
+  </person>
+  <person PersonCodeNo="PA2">
+    <person_info>
+      <first_name>Sotirios</first_name>
+	  <middle_name>A</middle_name>
+	  <middle_name>M</middle_name>
+      <last_name>Dimitrakoulakos</last_name>
+      <person_AFM>5555555555</person_AFM>
+      <person_address>Street3, 91, Korydallos</person_address>
+    </person_info>
+    <package_offer package_category="B_LITE" contract_No="C4">
+      <startPrice unitS="euro" forperiodS="month">40</startPrice>
+      <in_discount>
+	    <discount_rate>0.4</discount_rate>
+        <amount_after_disccount>400</amount_after_disccount>
+      </in_discount>
+      <contract_start_date>02-06-2023</contract_start_date>
+      <contract_end_date>02-07-2023</contract_end_date>
+    </package_offer>
+	<package_offer package_category="B_START" contract_No="C5">
+      <giving>Insurance</giving>
+      <giving>Bonus Tools</giving>
+	  <giving>Free Health Insurance</giving>
+      <startPrice unitS="euro" forperiodS="month">50</startPrice>
+      <in_discount>False Input</in_discount>
+      <contract_start_date>02-06-2023</contract_start_date>
+      <contract_end_date>02-07-2023</contract_end_date>
+    </package_offer>
+	<package_offer package_category="P_LITE" contract_No="C6">
+      <giving>Chance for a Free Car</giving>
+      <giving>Bonus Rights</giving>
+	  <tel_numb>213-7654321</tel_numb>
+      <startPrice unitS="dollar" forperiodS="month">60</startPrice>
+	  <finalPrice unitF="euro" forperiodF="month">200</finalPrice>
+      <in_discount>
+        <amount_after_disccount>600</amount_after_disccount>
+        <discount_rate>0.6</discount_rate>
+      </in_discount>
+      <contract_start_date>03-06-2023</contract_start_date>
+      <contract_end_date>03-07-2023</contract_end_date>
+    </package_offer>
+  </person>
+</customerList>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-16"?>
+
+<!ELEMENT Epipla_Diakosmisi_AE (name, stores_list, product_categories, room_classification, special_classification, contact_details, store_hours, Services?, product_list)>
+<!ELEMENT stores_list (store+)>
+<!ELEMENT product_categories (product_type+)>
+<!ELEMENT room_classification (room_classes)>
+<!ELEMENT room_classes (room_class+)>
+<!ELEMENT special_classification (special_classes)>
+<!ELEMENT contact_details (Headquarters, stores)>
+<!ELEMENT Headquarters (address, ((tel*, email*) | (email*, tel*)))>
+<!ELEMENT product_type (#PCDATA)>
+<!ELEMENT special_classes ((campaign, outlet) | (outlet, campaign))>
+<!ELEMENT stores (shop_store+)>
+<!ELEMENT shop_store (address, ((tel*, email*) | (email*, tel*)))>
+<!ELEMENT store_hours (Day+)>
+<!ELEMENT Day (#PCDATA | Timing)*>
+<!ELEMENT Services (shipping_Charges, Assembly_Charges, Interior_Design_Charges?)>
+<!ELEMENT shipping_Charges ((charges_Ath_Th, charges_other_places) | (charges_other_places, charges_Ath_Th))>
+<!ELEMENT charges_Ath_Th (shipValue+)>
+<!ELEMENT charges_other_places (shipValue+)>
+<!ELEMENT Assembly_Charges (assValue*)>
+<!ELEMENT Interior_Design_Charges (DesValue*)>
+<!ELEMENT product_list (product*)>
+<!ELEMENT product (product_identification, store_availability, product_descr, product_characteristics, start_value, Final_value)>
+<!ELEMENT store_availability (quantity*)>
+<!ELEMENT product_characteristics (manufacturer_country?, weight, material*, included*, not_included*, color*, (size | Dimensions*), certified?)>
+<!ELEMENT color (#PCDATA | also_available_color)*>
+<!ELEMENT Dimensions (height?, length?, width, depth*)>
+<!ELEMENT Final_value (#PCDATA | accept_doses)*>
+<!ELEMENT accept_doses (num_doses, ammount_dose, With_credit_card?, Interest_free?)>
+<!ELEMENT With_credit_card EMPTY>
+<!ELEMENT Interest_free EMPTY>
+<!ELEMENT num_doses (#PCDATA)>
+<!ELEMENT ammount_dose (#PCDATA)>
+<!ELEMENT start_value (#PCDATA | offer_rate)*>
+<!ELEMENT offer_rate (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT Timing (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT depth (#PCDATA)>
+<!ELEMENT also_available_color (#PCDATA)>
+<!ELEMENT certified EMPTY>
+<!ELEMENT manufacturer_country (#PCDATA)>
+<!ELEMENT weight (#PCDATA)>
+<!ELEMENT material (#PCDATA)>
+<!ELEMENT included (#PCDATA)>
+<!ELEMENT not_included (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT product_descr (#PCDATA)>
+<!ELEMENT product_name (#PCDATA)>
+<!ELEMENT product_code (#PCDATA)>
+<!ELEMENT DesValue (#PCDATA)>
+<!ELEMENT assValue (#PCDATA)>
+<!ELEMENT shipValue (#PCDATA)>
+<!ELEMENT room_class (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT store EMPTY>
+<!ELEMENT campaign EMPTY>
+<!ELEMENT outlet EMPTY>
+<!ELEMENT address ANY>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT product_identification EMPTY>
+<!ATTLIST Epipla_Diakosmisi_AE number_of_products CDATA #REQUIRED Year_opened CDATA #REQUIRED>
+<!ATTLIST product_identification product_code CDATA #REQUIRED product_name CDATA #IMPLIED>
+<!ATTLIST store strid ID #REQUIRED name CDATA #REQUIRED>
+<!ATTLIST product_type prod_class_id ID #REQUIRED>
+<!ATTLIST room_class class_id ID #REQUIRED>
+<!ATTLIST campaign spclass_id ID #REQUIRED>
+<!ATTLIST outlet spclass_id ID #REQUIRED>
+<!ATTLIST room_classification value CDATA #FIXED "ανάλογα με την τοποθέτησή τους σε χώρο του σπιτιού">
+<!ATTLIST Day day_id ID #REQUIRED>
+<!ATTLIST charges_Ath_Th shipping_until CDATA #REQUIRED>
+<!ATTLIST charges_other_places shipping_until CDATA #REQUIRED>
+<!ATTLIST shipValue ship_weight_category CDATA #REQUIRED shpunit (euro) #IMPLIED>
+<!ATTLIST assValue assunit (euro) #IMPLIED ass_category CDATA #REQUIRED>
+<!ATTLIST DesValue dessunit (euro) #IMPLIED Des_category CDATA #REQUIRED>
+<!ATTLIST Interior_Design_Charges forevery CDATA "room">
+<!ATTLIST product product_id ID #REQUIRED prod_class_id IDREFS #REQUIRED>
+<!ATTLIST quantity store_id IDREF #REQUIRED>
+<!ATTLIST weight unit_weight (kg|gr) #REQUIRED unit_weight_default (kg|gr) "kg">
+<!ATTLIST material mtr CDATA #IMPLIED>
+<!ATTLIST not_included no_incl CDATA #REQUIRED>
+<!ATTLIST included quantity CDATA #IMPLIED>
+<!ATTLIST certified certificate CDATA #REQUIRED>
+<!ATTLIST color in CDATA #IMPLIED> 
+<!ATTLIST also_available_color also_color CDATA #REQUIRED>
+<!ATTLIST height unit_height (cm | m) "cm"> 
+<!ATTLIST length unit_length (cm | m) "cm"> 
+<!ATTLIST width unit_width (cm | m) "cm"> 
+<!ATTLIST depth unit_depth CDATA #FIXED "cm" for CDATA #IMPLIED> 
+<!ATTLIST start_value valunit CDATA #IMPLIED can_return (yes | no) #IMPLIED can_reserved (yes | no) #IMPLIED option_of_assembly (yes | no) #IMPLIED is_assembled (yes | no) #IMPLIED>
+<!ATTLIST Final_value fnlunit CDATA #IMPLIED fnlunit_default CDATA "euro">
